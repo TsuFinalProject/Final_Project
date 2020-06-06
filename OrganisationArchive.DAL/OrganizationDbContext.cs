@@ -70,6 +70,10 @@ namespace OrganisationArchive.DAL
                 .Property(n => n.Work)
                 .HasMaxLength(30)
                 .IsRequired();
+            //user 
+            modelBuilder.Entity<User>()
+                .Property(n => n.Username)
+                .HasMaxLength(20);
         }
     }
 }
