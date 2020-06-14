@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OrganisationArchive.DAL.Repository
+namespace OrganisationArchive.DAL.Repository.Implementations
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {

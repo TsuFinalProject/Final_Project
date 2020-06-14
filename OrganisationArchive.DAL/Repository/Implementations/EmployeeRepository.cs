@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace OrganisationArchive.DAL.Repository
+namespace OrganisationArchive.DAL.Repository.Implementations
 {
     public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
     {
