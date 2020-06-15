@@ -5410,11 +5410,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tamar\\OneDrive\\Desktop\\OrganisationArchive\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
       "projectName": "OrganisationArchive.DAL",
-      "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\OrganisationArchive\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
+      "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
       "packagesPath": "C:\\Users\\tamar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\OrganisationArchive\\OrganisationArchive.DAL\\obj\\",
+      "outputPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

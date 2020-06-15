@@ -18,6 +18,7 @@ namespace OrganisationArchive.DAL.Models
         public string PersonalNumber { get; set; }
         [Required]
         public DateTime DateOfBirth { get; set; }
+        public string Image { get; set; }
         [Required]
         public string City { get; set; }
         [Required]
