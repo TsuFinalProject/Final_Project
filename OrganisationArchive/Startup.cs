@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL.Services.Implementations;
+using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OrganisationArchive.DAL;
+using OrganisationArchive.DAL.Repository.Implementations;
+using OrganisationArchive.DAL.Repository.Interfaces;
 
 namespace OrganisationArchive
 {
@@ -26,9 +30,21 @@ namespace OrganisationArchive
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+
             services.AddDbContext<OrganizationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("OrganizationDbConnection")));
             services.AddScoped<OrganizationDbContext, OrganizationDbContext>();
+
+
+            services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IOrganizationRepository, OrganizationRepository>();
+
+            services.AddScoped<IPersonService, PersonService>();
+
+            services.AddScoped<IUOW,UOW>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

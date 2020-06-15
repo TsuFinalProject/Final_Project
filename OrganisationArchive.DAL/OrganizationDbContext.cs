@@ -8,10 +8,10 @@ namespace OrganisationArchive.DAL
 {
     public class OrganizationDbContext : DbContext
     {
-        DbSet<Person> People { get; set; }
-        DbSet<Organization> Organizations { get; set; }
-        DbSet<Employee> Employees { get; set; }
-        DbSet<User> Users { get; set; }
+        public DbSet<Person> People { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<User> Users { get; set; }
         public OrganizationDbContext(DbContextOptions options) : base(options)
         {
 
@@ -21,6 +21,7 @@ namespace OrganisationArchive.DAL
             base.OnModelCreating(modelBuilder);
 
             //Employee
+            modelBuilder.Entity<Employee>().HasKey(x => x.Id);
 
             modelBuilder.Entity<Employee>()
                 .HasOne(e => e.Person)
@@ -37,6 +38,7 @@ namespace OrganisationArchive.DAL
                 .IsRequired();
 
             //Person
+            modelBuilder.Entity<Person>().HasKey(x => x.Id);
             modelBuilder.Entity<Person>()
                 .Property(m => m.Name)
                 .HasMaxLength(20)
@@ -57,6 +59,8 @@ namespace OrganisationArchive.DAL
               .IsRequired();
 
             //Organization
+            modelBuilder.Entity<Organization>().HasKey(x => x.Id);
+
             modelBuilder.Entity<Organization>()
                 .Property(n => n.Name)
                 .HasMaxLength(50);
