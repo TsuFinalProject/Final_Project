@@ -1,4 +1,5 @@
 ﻿using OrganisationArchive.DAL.Models;
+using OrganisationArchive.DAL.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;

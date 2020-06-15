@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using OrganisationArchive.DAL.Repository.Interfaces;
+using System.Collections.Generic;
 
 namespace OrganisationArchive.DAL.Repository.Implementations
 {
