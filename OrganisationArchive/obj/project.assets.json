@@ -5424,43 +5424,24 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\tamar\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
-=======
     "C:\\Users\\Zardi\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
->>>>>>> e7167b47182838686321944207b19bfa13cb3c1c
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\tamar\\OneDrive\\Desktop\\OrganisationArchive\\OrganisationArchive\\OrganisationArchive.csproj",
+      "projectUniqueName": "C:\\Users\\Zardi\\Desktop\\New folder\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
       "projectName": "OrganisationArchive",
-      "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\OrganisationArchive\\OrganisationArchive\\OrganisationArchive.csproj",
-      "packagesPath": "C:\\Users\\tamar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\OrganisationArchive\\OrganisationArchive\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\Zardi\\Desktop\\Project\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
-      "projectName": "OrganisationArchive",
-      "projectPath": "C:\\Users\\Zardi\\Desktop\\Project\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
+      "projectPath": "C:\\Users\\Zardi\\Desktop\\New folder\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
       "packagesPath": "C:\\Users\\Zardi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zardi\\Desktop\\Project\\Final_Project\\OrganisationArchive\\obj\\",
->>>>>>> e7167b47182838686321944207b19bfa13cb3c1c
+      "outputPath": "C:\\Users\\Zardi\\Desktop\\New folder\\Final_Project\\OrganisationArchive\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\tamar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
         "C:\\Users\\Zardi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> e7167b47182838686321944207b19bfa13cb3c1c
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5472,13 +5453,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-<<<<<<< HEAD
-            "C:\\Users\\tamar\\OneDrive\\Desktop\\OrganisationArchive\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
-              "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\OrganisationArchive\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj"
-=======
-            "C:\\Users\\Zardi\\Desktop\\Project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
-              "projectPath": "C:\\Users\\Zardi\\Desktop\\Project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj"
->>>>>>> e7167b47182838686321944207b19bfa13cb3c1c
+            "C:\\Users\\Zardi\\Desktop\\New folder\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
+              "projectPath": "C:\\Users\\Zardi\\Desktop\\New folder\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj"
             }
           }
         }
@@ -5531,11 +5507,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
-=======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
->>>>>>> e7167b47182838686321944207b19bfa13cb3c1c
       }
     }
   }
