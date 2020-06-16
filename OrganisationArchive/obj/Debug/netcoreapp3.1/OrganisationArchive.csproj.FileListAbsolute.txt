@@ -237,4 +237,7 @@ C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\Organisation
 C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\bin\Debug\netcoreapp3.1\BLL.dll
 C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\bin\Debug\netcoreapp3.1\BLL.pdb
 C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\obj\Debug\netcoreapp3.1\Razor\Views\Person\AddPerson.cshtml.g.cs
+C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\obj\Debug\netcoreapp3.1\Razor\Views\Person\Edit.cshtml.g.cs
+C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\obj\Debug\netcoreapp3.1\Razor\Views\Person\Details.cshtml.g.cs

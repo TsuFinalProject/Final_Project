@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OrganisationArchive.DAL.Models;
 
@@ -33,8 +34,8 @@ namespace OrganisationArchive.Controllers
                 Person AddPerson = new Person();
                 AddPerson = person;
                 personService.AddPerson(AddPerson);
-                
-                return View(nameof(People));
+
+                return Redirect(Url.Action("People", "Person"));
             }
             return View(person);
         }
@@ -48,9 +49,36 @@ namespace OrganisationArchive.Controllers
         [HttpPost]
         public IActionResult Edit(Person person)
         {
+            personService.UploadPhoto(person);
+
             personService.UpdatePerson(person);
 
             return Redirect(Url.Action("People", "Person"));
         }
+
+        [HttpGet]
+        public IActionResult Details(int Id)
+        {
+            var person = personService.GetPersonById(Id);
+            return View(person);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int Id)
+        {
+            var person = personService.GetPersonById(Id);
+            personService.DeletePerson(person);
+            return Redirect(Url.Action("People", "Person"));
+        }
+
+        //[HttpPost]
+        //public IActionResult UploadPhoto(IFormFile image, Person person)
+        //{
+        //    if (image?.Length > 0)
+        //    {
+        //        personService.UploadPhoto(image, person);
+        //    }
+        //    return RedirectToAction("AddPerson");
+        //}
     }
 }
