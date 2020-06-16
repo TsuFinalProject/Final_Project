@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace OrganisationArchive.DAL.Models
@@ -24,5 +26,7 @@ namespace OrganisationArchive.DAL.Models
         [Required]
         public string PhoneNumber { get; set; }
         public ICollection<Employee> Employees { get; set; }
+        [NotMapped]
+        public IFormFile ImageFile { get; set; }
     }
 }
