@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL.Services.Helper;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OrganisationArchive.DAL.Enums;
 using OrganisationArchive.DAL.Models;
 
 namespace OrganisationArchive.Controllers
@@ -24,6 +26,8 @@ namespace OrganisationArchive.Controllers
         [HttpGet]
         public IActionResult AddPerson()
         {
+            ViewBag.Gender = typeof(Gender).GetAllEnumNames();
+            ViewBag.City = typeof(City).GetAllEnumNames();
             return View();
         }
         [HttpPost]
@@ -43,6 +47,10 @@ namespace OrganisationArchive.Controllers
         [HttpGet]
         public IActionResult Edit(int Id)
         {
+
+            ViewBag.Gender = typeof(Gender).GetAllEnumNames();
+            ViewBag.City = typeof(City).GetAllEnumNames();
+
             var person  = personService.GetPersonById(Id);
             return View(person);
         }
@@ -80,5 +88,10 @@ namespace OrganisationArchive.Controllers
         //    }
         //    return RedirectToAction("AddPerson");
         //}
+
+
+
+
+
     }
 }
