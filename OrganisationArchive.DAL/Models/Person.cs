@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using OrganisationArchive.DAL.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -15,14 +16,15 @@ namespace OrganisationArchive.DAL.Models
         [Required]
         public string Lastname { get; set; }
         [Required]
-        public string Gender { get; set; }
+        public Gender Gender { get; set; }
+        
         [Required]
         public string PersonalNumber { get; set; }
         [Required]
         public DateTime DateOfBirth { get; set; }
         public string Image { get; set; }
         [Required]
-        public string City { get; set; }
+        public City City { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
         public ICollection<Employee> Employees { get; set; }
