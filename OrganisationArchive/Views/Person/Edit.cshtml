@@ -48,7 +48,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="City" class="control-label"></label>
+<<<<<<< Updated upstream
                 <input asp-for="City" class="form-control" />
+=======
+                <select asp-for="City" class="form-control required">
+                    <option disabled="disabled" selected="selected">Select City</option>
+                    @foreach (var el in ViewBag.City as List<string>)
+                    {
+                        <option>@el</option>
+                    }
+                </select>
+>>>>>>> Stashed changes
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
