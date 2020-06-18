@@ -15,13 +15,16 @@ namespace OrganisationArchive.DAL.Models
         [Required]
         public string Gender { get; set; }
         [Required]
+        [StringLength(11, MinimumLength = 11, ErrorMessage = "It must be  11 characters")]
         public string PersonalNumber { get; set; }
         [Required]
+        [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
         public string Image { get; set; }
         [Required]
         public string City { get; set; }
         [Required]
+        [Phone]
         public string PhoneNumber { get; set; }
         public ICollection<Employee> Employees { get; set; }
     }

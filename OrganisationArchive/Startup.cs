@@ -35,7 +35,7 @@ namespace OrganisationArchive
             services.AddDbContext<OrganizationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("OrganizationDbConnection")));
             services.AddScoped<OrganizationDbContext, OrganizationDbContext>();
-
+            services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
 
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
@@ -73,6 +73,35 @@ namespace OrganisationArchive
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            MigrateDb(app, env);
+        }
+        private void MigrateDb(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            try
+            {
+                using (var scope = app.ApplicationServices
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope())
+                {
+                    var dbContextObject = scope.ServiceProvider.GetService<OrganizationDbContext>();
+
+                    /* comment this lines if you don't need db to be droped and create each time you run the app*/
+                    if (env.IsDevelopment())
+                    {
+                        dbContextObject.Database.EnsureDeleted();
+                    }
+                    //**************************************
+
+                    dbContextObject.Database.Migrate();
+
+                    var dbInitializer = scope.ServiceProvider.GetService<IDatabaseInitializer>();
+                    dbInitializer.Seed().GetAwaiter().GetResult();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

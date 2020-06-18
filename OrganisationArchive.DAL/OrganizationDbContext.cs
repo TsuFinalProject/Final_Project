@@ -13,8 +13,7 @@ namespace OrganisationArchive.DAL
         public DbSet<Employee> Employees { get; set; }
         public DbSet<User> Users { get; set; }
         public OrganizationDbContext(DbContextOptions options) : base(options)
-        {
-
+        {           
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -67,12 +66,11 @@ namespace OrganisationArchive.DAL
 
             modelBuilder.Entity<Organization>()
                 .Property(n => n.Address)
-                .HasMaxLength(30)
+                .HasMaxLength(100)
                 .IsRequired();
 
             modelBuilder.Entity<Organization>()
                 .Property(n => n.Work)
-                .HasMaxLength(30)
                 .IsRequired();
             //user 
             modelBuilder.Entity<User>()
