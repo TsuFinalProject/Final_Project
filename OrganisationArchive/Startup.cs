@@ -42,6 +42,7 @@ namespace OrganisationArchive
             services.AddScoped<IOrganizationRepository, OrganizationRepository>();
 
             services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<IOrganizationService, OrganizationService>();
 
             services.AddScoped<IUOW,UOW>();
 

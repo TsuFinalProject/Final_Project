@@ -13,6 +13,13 @@ namespace OrganisationArchive.DAL.Repository.Implementations
             : base(context)
                 { }
 
+        public Person AddpersonDefaultPic(Person person)
+        {
+            person.Image = "no-image.kgb.png";
+            var per = _context.People.Add(person);
+            return per.Entity;
+        }
+
         public IEnumerable<Person> GetPeopleWithJoin()
         {
             return _context.People.Include(x => x.Employees);

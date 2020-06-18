@@ -1,18 +1,29 @@
-﻿@model IEnumerable<OrganisationArchive.DAL.Models.Person>
+﻿@using  OrganisationArchive.DAL.Models
+@model IEnumerable<OrganisationArchive.DAL.Models.Person>
+
+
 
 @{
     ViewData["Title"] = "People";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
 
+}
+<style>
+    body{
+        background-color:azure;
+    }
+</style>
 <h1>People</h1>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                Picture
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -21,6 +32,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Gender)
+
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PersonalNumber)
@@ -42,6 +54,9 @@
         {
             <tr>
                 <td>
+                    <img src="~/images/@item.Image" style="border-radius:20%" alt="Alternate Text" width="100" />
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
@@ -49,6 +64,7 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Gender)
+                  
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.PersonalNumber)
@@ -71,5 +87,22 @@
         }
     </tbody>
 </table>
-
+    *@
 @Html.ActionLink("Add person", "AddPerson", "Person", null, new { @class = "btn btn-primary btn-large" })
+
+<div class="card-columns">
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <div class="card-img">
+                <img src="~/images/@item.Image" style="width:100%" alt="Alternate Text" />
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@item.Name @item.Lastname</h5>
+                <a class="EditDetailBtn" href="/Person/Edit/@item.Id">Edit</a>
+                <a class="EditDetailBtn" href="/Person/Details/@item.Id">Details</a>
+                <a class="EditDetailBtn" href="/Person/Delete/@item.Id">Delete</a>
+            </div>
+        </div>
+    }
+</div>

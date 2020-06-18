@@ -1,8 +1,10 @@
-﻿@model OrganisationArchive.DAL.Models.Person
+﻿@using OrganisationArchive.DAL.Enums
+@model OrganisationArchive.DAL.Models.Person
 
 @{
     ViewData["Title"] = "Edit";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+ Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <h1>Edit</h1>
@@ -11,8 +13,23 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*<form asp-action="UploadPhoto" style="width:100%" method="post" enctype="multipart/form-data">
+            <input asp-for="ImageFile" class="form-control" type="file" name="image" style="background-color:transparent; width:100%; margin-left:-5%" />
+            <input class="btn btn-outline-primary" type="submit" value="upload" />
+        </form>*@
+        <form method="post" asp-action="Edit" enctype="multipart/form-data">
+            <img src="~/images/@Model.Image" width="200" height="200" />
+
+            <div class="form-group">
+                @*<input asp-for="ImageFile" type="file" accept="image/*" />*@
+                @Html.TextBoxFor(m => m.ImageFile, new { type = "file" })
+
+                <input type="submit" asp-action="UploadPhoto" asp-controller="Person" value="Upload" class="btn btn-primary" />
+            </div>
+            <input asp-for="Image" type="hidden" />
+
+
+
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -26,7 +43,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
+                <select asp-for="Gender" class="form-control required">
+                    <option disabled="disabled" selected="selected">Select Gender</option>
+                    @foreach (var el in ViewBag.Gender as List<string>)
+                    {
+                        <option>@el</option>
+                    }
+                </select>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -39,14 +62,16 @@
                 <input asp-for="DateOfBirth" class="form-control" />
                 <span asp-validation-for="DateOfBirth" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" class="form-control" />
-                <span asp-validation-for="Image" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
+                <select asp-for="City" class="form-control required">
+                    <option disabled="disabled" selected="selected">Select Gender</option>
+                    @foreach (var el in ViewBag.City as List<string>)
+                    {
+                        <option>@el</option>
+                    }
+                </select>
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -62,7 +87,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="People">Back to List</a>
 </div>
 
 @section Scripts {

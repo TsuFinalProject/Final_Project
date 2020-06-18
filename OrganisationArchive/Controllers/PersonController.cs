@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL.Services.Helper;
 using BLL.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OrganisationArchive.DAL.Enums;
 using OrganisationArchive.DAL.Models;
 
 namespace OrganisationArchive.Controllers
@@ -23,6 +26,8 @@ namespace OrganisationArchive.Controllers
         [HttpGet]
         public IActionResult AddPerson()
         {
+            ViewBag.Gender = typeof(Gender).GetAllEnumNames();
+            ViewBag.City = typeof(City).GetAllEnumNames();
             return View();
         }
         [HttpPost]
@@ -30,11 +35,9 @@ namespace OrganisationArchive.Controllers
         {
             if (ModelState.IsValid)
             {
-                Person AddPerson = new Person();
-                AddPerson = person;
-                personService.AddPerson(AddPerson);
-                
-                return View(nameof(People));
+
+                personService.AddPerson(person);
+                return RedirectToAction("People", person );
             }
             return View(person);
         }
@@ -42,15 +45,52 @@ namespace OrganisationArchive.Controllers
         [HttpGet]
         public IActionResult Edit(int Id)
         {
+
+            ViewBag.Gender = typeof(Gender).GetAllEnumNames();
+            ViewBag.City = typeof(City).GetAllEnumNames();
+
             var person  = personService.GetPersonById(Id);
             return View(person);
         }
         [HttpPost]
         public IActionResult Edit(Person person)
         {
-            personService.UpdatePerson(person);
+            if (ModelState.IsValid)
+            {
+                personService.UpdatePerson(person);
 
+                return Redirect(Url.Action("People", "Person"));
+            }
+            return View(person.Id);
+        }
+
+        [HttpGet]
+        public IActionResult Details(int Id)
+        {
+            var person = personService.GetPersonById(Id);
+            return View(person);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int Id)
+        {
+            var person = personService.GetPersonById(Id);
+            personService.DeletePerson(person);
             return Redirect(Url.Action("People", "Person"));
         }
+
+        [HttpPost]
+        public IActionResult UploadPhoto(Person person)
+        {
+            //var personWithPhoto = person;
+            personService.UploadPhoto(person);
+            return RedirectToAction("Edit", new { id = person.Id });
+
+        }
+
+
+
+
+
     }
 }
