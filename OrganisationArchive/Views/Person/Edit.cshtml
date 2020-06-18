@@ -13,10 +13,23 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit" enctype="multipart/form-data">
-            <img src="~/images/ProfilePhotos/@Model.Image" alt="Alternate Text" width="200" height="200" />
+        @*<form asp-action="UploadPhoto" style="width:100%" method="post" enctype="multipart/form-data">
+            <input asp-for="ImageFile" class="form-control" type="file" name="image" style="background-color:transparent; width:100%; margin-left:-5%" />
+            <input class="btn btn-outline-primary" type="submit" value="upload" />
+        </form>*@
+        <form method="post" asp-action="Edit" enctype="multipart/form-data">
+            <img src="~/images/@Model.Image" width="200" height="200" />
 
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @*<input asp-for="ImageFile" type="file" accept="image/*" />*@
+                @Html.TextBoxFor(m => m.ImageFile, new { type = "file" })
+
+                <input type="submit" asp-action="UploadPhoto" asp-controller="Person" value="Upload" class="btn btn-primary" />
+            </div>
+            <input asp-for="Image" type="hidden" />
+
+
+
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -49,11 +62,7 @@
                 <input asp-for="DateOfBirth" class="form-control" />
                 <span asp-validation-for="DateOfBirth" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ImageFile" class="control-label"></label>
-                <input asp-for="ImageFile" accept="image/*" />
-                <span asp-validation-for="ImageFile" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="City" class="control-label"></label>
                 <select asp-for="City" class="form-control required">
@@ -78,7 +87,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="People">Back to List</a>
 </div>
 
 @section Scripts {

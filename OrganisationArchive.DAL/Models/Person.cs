@@ -16,7 +16,7 @@ namespace OrganisationArchive.DAL.Models
         [Required]
         public string Lastname { get; set; }
         [Required]
-        public Gender Gender { get; set; }
+        public string Gender { get; set; }
         
         [Required]
         public string PersonalNumber { get; set; }
@@ -24,7 +24,7 @@ namespace OrganisationArchive.DAL.Models
         public DateTime DateOfBirth { get; set; }
         public string Image { get; set; }
         [Required]
-        public City City { get; set; }
+        public string City { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
         public ICollection<Employee> Employees { get; set; }
@@ -32,3 +32,4 @@ namespace OrganisationArchive.DAL.Models
         public IFormFile ImageFile { get; set; }
     }
 }
+

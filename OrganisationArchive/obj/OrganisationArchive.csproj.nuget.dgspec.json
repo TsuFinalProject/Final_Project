@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj": {}
+    "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\BLL\\BLL.csproj": {
+    "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\Nata\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\BLL\\obj\\",
+        "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\tamar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nata\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\tamar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -30,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
-                "projectPath": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj"
+              "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
+                "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj"
               }
             }
           }
@@ -48,6 +49,10 @@
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "SharpDX.Direct2D1": {
+              "target": "Package",
+              "version": "[4.2.0, )"
             },
             "System.IO.FileSystem.AccessControl": {
               "target": "Package",
@@ -69,25 +74,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
+    "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
         "projectName": "OrganisationArchive.DAL",
-        "projectPath": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
-        "packagesPath": "C:\\Users\\Nata\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive.DAL\\obj\\",
+        "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
+        "packagesPath": "C:\\Users\\tamar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nata\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\tamar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -154,25 +160,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj": {
+    "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
+        "projectUniqueName": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
         "projectName": "OrganisationArchive",
-        "projectPath": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
-        "packagesPath": "C:\\Users\\Nata\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive\\obj\\",
+        "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
+        "packagesPath": "C:\\Users\\tamar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nata\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\tamar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -184,11 +191,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\BLL\\BLL.csproj": {
-                "projectPath": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\BLL\\BLL.csproj"
+              "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\BLL\\BLL.csproj"
               },
-              "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
-                "projectPath": "C:\\Users\\Nata\\Desktop\\Nata\\TSU\\webapp\\project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj"
+              "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
+                "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project\\Final_Project\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj"
               }
             }
           }
@@ -245,7 +252,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

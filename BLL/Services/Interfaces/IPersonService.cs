@@ -14,6 +14,6 @@ namespace BLL.Services.Interfaces
         void DeletePerson(Person person);
         void UpdatePerson(Person person);
         void AddPerson(Person person);
-        void UploadPhoto(Person person);
+        Person UploadPhoto(Person person);
     }
 }

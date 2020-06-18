@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using OrganisationArchive.DAL.Models;
 using OrganisationArchive.DAL.Repository.Interfaces;
+using SharpDX.WIC;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -47,16 +48,27 @@ namespace BLL.Services.Implementations
             UOW.commit();
         }
 
-        public void UploadPhoto(Person person)
+        public Person UploadPhoto(Person person)
         {
-            var uploads = Path.Combine(Environment.CurrentDirectory, "wwwroot/images/ProfilePhotos");
-            var ImageName = Path.GetRandomFileName() + '.' + person.ImageFile.FileName.Split('.').Last();
+            var uploads = Path.Combine(Environment.CurrentDirectory, "wwwroot/images");
+            var ImageName = RandomString(10)+ '.' + person.ImageFile.FileName.Split('.').Last();
             var filePath = Path.Combine(uploads, ImageName);
             person.Image = ImageName;
+            UpdatePerson(person);
             using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
-                person.ImageFile.CopyToAsync(fileStream);
+                person.ImageFile.OpenReadStream();
+                //person.ImageFile.CopyToAsync(fileStream);
+                person.ImageFile.CopyTo(fileStream);
             }
+            return person;
+        }
+        private static Random random = new Random();
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }

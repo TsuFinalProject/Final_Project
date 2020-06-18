@@ -35,11 +35,9 @@ namespace OrganisationArchive.Controllers
         {
             if (ModelState.IsValid)
             {
-                Person AddPerson = new Person();
-                AddPerson = person;
-                personService.AddPerson(AddPerson);
 
-                return Redirect(Url.Action("People", "Person"));
+                personService.AddPerson(person);
+                return RedirectToAction("ImageUploadScreen", person );
             }
             return View(person);
         }
@@ -57,11 +55,13 @@ namespace OrganisationArchive.Controllers
         [HttpPost]
         public IActionResult Edit(Person person)
         {
-            personService.UploadPhoto(person);
+            if (ModelState.IsValid)
+            {
+                personService.UpdatePerson(person);
 
-            personService.UpdatePerson(person);
-
-            return Redirect(Url.Action("People", "Person"));
+                return Redirect(Url.Action("People", "Person"));
+            }
+            return View(person.Id);
         }
 
         [HttpGet]
@@ -79,15 +79,14 @@ namespace OrganisationArchive.Controllers
             return Redirect(Url.Action("People", "Person"));
         }
 
-        //[HttpPost]
-        //public IActionResult UploadPhoto(IFormFile image, Person person)
-        //{
-        //    if (image?.Length > 0)
-        //    {
-        //        personService.UploadPhoto(image, person);
-        //    }
-        //    return RedirectToAction("AddPerson");
-        //}
+        [HttpPost]
+        public IActionResult UploadPhoto(Person person)
+        {
+            //var personWithPhoto = person;
+            personService.UploadPhoto(person);
+            return RedirectToAction("Edit", new { id = person.Id });
+
+        }
 
 
 
