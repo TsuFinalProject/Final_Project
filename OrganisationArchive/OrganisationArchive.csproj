@@ -23,10 +23,6 @@
     <ProjectReference Include="..\OrganisationArchive.DAL\OrganisationArchive.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\images\" />
-  </ItemGroup>
-
 
 
 </Project>

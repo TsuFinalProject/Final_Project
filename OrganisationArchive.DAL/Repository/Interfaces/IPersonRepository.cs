@@ -9,5 +9,6 @@ namespace OrganisationArchive.DAL.Repository.Interfaces
     {
         IEnumerable<Person> GetPeopleWithJoin();
         Person GetPersonById(int Id);
+        Person AddpersonDefaultPic(Person person);
     }
 }

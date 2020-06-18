@@ -37,7 +37,7 @@ namespace OrganisationArchive.Controllers
             {
 
                 personService.AddPerson(person);
-                return RedirectToAction("ImageUploadScreen", person );
+                return RedirectToAction("People", person );
             }
             return View(person);
         }

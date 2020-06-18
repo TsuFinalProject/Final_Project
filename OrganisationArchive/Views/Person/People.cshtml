@@ -8,10 +8,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
-
+<style>
+    body{
+        background-color:azure;
+    }
+</style>
 <h1>People</h1>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
@@ -83,5 +87,22 @@
         }
     </tbody>
 </table>
-
+    *@
 @Html.ActionLink("Add person", "AddPerson", "Person", null, new { @class = "btn btn-primary btn-large" })
+
+<div class="card-columns">
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <div class="card-img">
+                <img src="~/images/@item.Image" style="width:100%" alt="Alternate Text" />
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@item.Name @item.Lastname</h5>
+                <a class="EditDetailBtn" href="/Person/Edit/@item.Id">Edit</a>
+                <a class="EditDetailBtn" href="/Person/Details/@item.Id">Details</a>
+                <a class="EditDetailBtn" href="/Person/Delete/@item.Id">Delete</a>
+            </div>
+        </div>
+    }
+</div>

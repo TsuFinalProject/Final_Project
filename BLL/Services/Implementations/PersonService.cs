@@ -22,7 +22,7 @@ namespace BLL.Services.Implementations
 
         public void AddPerson(Person person)
         {
-            UOW.Person.Create(person);
+            UOW.Person.AddpersonDefaultPic(person);
             UOW.commit();
         }
 

@@ -2,6 +2,8 @@
 using OrganisationArchive.DAL.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Text;
 
 namespace OrganisationArchive.DAL.Repository.Implementations
@@ -15,12 +17,19 @@ namespace OrganisationArchive.DAL.Repository.Implementations
 
         public IEnumerable<Employee> GetAllEmplyee()
         {
-            throw new NotImplementedException();
+            return _context.Employees
+                .Include(p => p.Organization)
+                .Include(p => p.Person)
+                .AsNoTracking();
         }
 
         public Employee GetEmployeeById(int Id)
         {
-            throw new NotImplementedException();
+            return _context.Employees
+                .Include(p => p.Organization)
+                .Include(p => p.Person)
+                .AsNoTracking()
+                .SingleOrDefault(x => x.Id == Id);
         }
     }
 }

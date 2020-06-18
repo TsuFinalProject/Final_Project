@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OrganisationArchive.DAL.Models;
 
 namespace OrganisationArchive.Controllers
 {
@@ -17,7 +18,7 @@ namespace OrganisationArchive.Controllers
             _organizationService = organizationService;
         }
         // GET: Organization
-        public ActionResult Index()
+        public ActionResult Organizations()
         {
             return View();
         }
@@ -37,12 +38,12 @@ namespace OrganisationArchive.Controllers
         // POST: Organization/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Organization organization)
         {
             try
             {
                 // TODO: Add insert logic here
-
+                _organizationService.AddOrganization(organization);
                 return RedirectToAction(nameof(Index));
             }
             catch
