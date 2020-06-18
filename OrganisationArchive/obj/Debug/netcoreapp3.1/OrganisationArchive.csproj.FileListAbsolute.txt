@@ -405,3 +405,6 @@ C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\Organisation
 C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\bin\Debug\netcoreapp3.1\SharpDX.DXGI.dll
 C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\obj\Debug\netcoreapp3.1\Razor\Views\Organization\Organizations.cshtml.g.cs
 C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\obj\Debug\netcoreapp3.1\Razor\Views\Organization\Create.cshtml.g.cs
+C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\obj\Debug\netcoreapp3.1\Razor\Views\Organization\Delete.cshtml.g.cs
+C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\obj\Debug\netcoreapp3.1\Razor\Views\Organization\Details.cshtml.g.cs
+C:\Users\tamar\OneDrive\Desktop\project\Final_Project\Final_Project\OrganisationArchive\obj\Debug\netcoreapp3.1\Razor\Views\Organization\Edit.cshtml.g.cs
