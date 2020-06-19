@@ -6,6 +6,8 @@ using BLL.Services.Implementations;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OrganisationArchive.DAL.Migrations;
+using OrganisationArchive.DAL.Models;
 using OrganisationArchive.DAL.Repository.Interfaces;
 
 namespace OrganisationArchive.Controllers
@@ -19,31 +21,35 @@ namespace OrganisationArchive.Controllers
             _employee = employee;      
         }
         // GET: EmployeeController
-        public ActionResult Index()
+        public ActionResult Employees()
         {
-            return View();
+            var employees = _employee.getEmployee();
+            return View(employees);
         }
 
         // GET: EmployeeController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var employees = _employee.GetEmployeenById(id);
+            return View(employees);
         }
 
         // GET: EmployeeController/Create
         public ActionResult Create()
         {
+            
             return View();
         }
 
         // POST: EmployeeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Employee employee)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _employee.AddEmployee(employee);
+                return RedirectToAction(nameof(employee));
             }
             catch
             {
