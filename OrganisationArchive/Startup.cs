@@ -43,6 +43,7 @@ namespace OrganisationArchive
 
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<IOrganizationService, OrganizationService>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
 
             services.AddScoped<IUOW,UOW>();
 

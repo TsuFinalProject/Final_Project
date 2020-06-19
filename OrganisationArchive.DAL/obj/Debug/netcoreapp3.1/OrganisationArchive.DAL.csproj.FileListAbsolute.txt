@@ -64,3 +64,15 @@ C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchi
 C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.AssemblyInfo.cs
 C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.dll
 C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.pdb
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\bin\Debug\netcoreapp3.1\OrganisationArchive.DAL.deps.json
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\bin\Debug\netcoreapp3.1\OrganisationArchive.DAL.runtimeconfig.json
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\bin\Debug\netcoreapp3.1\OrganisationArchive.DAL.runtimeconfig.dev.json
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\bin\Debug\netcoreapp3.1\OrganisationArchive.DAL.dll
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\bin\Debug\netcoreapp3.1\OrganisationArchive.DAL.pdb
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.csprojAssemblyReference.cache
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.AssemblyInfoInputs.cache
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.AssemblyInfo.cs
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.dll
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.pdb
+C:\Users\Mariami\Desktop\Web_app_proj\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.genruntimeconfig.cache
