@@ -75,7 +75,8 @@ namespace OrganisationArchive.DAL
                 PersonalNumber = "12345678901",
                 DateOfBirth = new DateTime(2000, 6, 17),
                 City = "Tbilisi",
-                PhoneNumber = "551204848"
+                PhoneNumber = "551204848",
+                Image= "avatar-1024x1024.jpg"
             });
             _context.People.Add(
             new Person
@@ -86,7 +87,8 @@ namespace OrganisationArchive.DAL
                 PersonalNumber = "09876543211",
                 DateOfBirth = new DateTime(2000, 06, 11),
                 City = "Tbilisi",
-                PhoneNumber = "599878716"
+                PhoneNumber = "599878716",
+                Image = "avatar-1024x1024.jpg"
             });
             _context.People.Add(
             new Person
@@ -97,7 +99,8 @@ namespace OrganisationArchive.DAL
                 PersonalNumber = "23415687990",
                 DateOfBirth = new DateTime(1999, 07, 14),
                 City = "Tbilisi",
-                PhoneNumber = "567342456"
+                PhoneNumber = "567342456",
+                Image = "avatar-1024x1024.jpg"
             });
            _context.People.Add(
            new Person
@@ -108,8 +111,9 @@ namespace OrganisationArchive.DAL
                 PersonalNumber = "45632187922",
                 DateOfBirth = new DateTime(1996, 09, 23),
                 City = "Tbilisi",
-                PhoneNumber = "598-70-57-93"
-            }
+                PhoneNumber = "598-70-57-93",
+               Image = "avatar-1024x1024.jpg"
+           }
             );
            _context.SaveChanges();
             _context.Database.EnsureCreated();

@@ -15,7 +15,7 @@ namespace OrganisationArchive.DAL.Repository.Implementations
 
         public Person AddpersonDefaultPic(Person person)
         {
-            person.Image = "no-image.kgb.png";
+            person.Image = "avatar-1024x1024.jpg";
             var per = _context.People.Add(person);
             return per.Entity;
         }
