@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj": {}
+    "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\BLL\\BLL.csproj": {
+    "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\Mariami\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\BLL\\obj\\",
+        "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\tamar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\BLL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Mariami\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\tamar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -27,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
-                "projectPath": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj"
+              "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
+                "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj"
               }
             }
           }
@@ -70,22 +74,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
+    "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
         "projectName": "OrganisationArchive.DAL",
-        "projectPath": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
-        "packagesPath": "C:\\Users\\Mariami\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive.DAL\\obj\\",
+        "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj",
+        "packagesPath": "C:\\Users\\tamar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive.DAL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Mariami\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\tamar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -152,22 +160,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj": {
+    "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
+        "projectUniqueName": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
         "projectName": "OrganisationArchive",
-        "projectPath": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
-        "packagesPath": "C:\\Users\\Mariami\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive\\obj\\",
+        "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive\\OrganisationArchive.csproj",
+        "packagesPath": "C:\\Users\\tamar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Mariami\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\tamar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -179,11 +191,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\BLL\\BLL.csproj": {
-                "projectPath": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\BLL\\BLL.csproj"
+              "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\BLL\\BLL.csproj"
               },
-              "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
-                "projectPath": "C:\\Users\\Mariami\\Desktop\\web-app-\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj"
+              "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj": {
+                "projectPath": "C:\\Users\\tamar\\OneDrive\\Desktop\\project(6192020)\\Final_Project\\OrganisationArchive.DAL\\OrganisationArchive.DAL.csproj"
               }
             }
           }
@@ -240,7 +252,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
