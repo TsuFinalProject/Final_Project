@@ -54,3 +54,13 @@ C:\Users\Mariami\Desktop\web-app-\Final_Project\OrganisationArchive.DAL\obj\Debu
 C:\Users\Mariami\Desktop\web-app-\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.dll
 C:\Users\Mariami\Desktop\web-app-\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.pdb
 C:\Users\Mariami\Desktop\web-app-\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.genruntimeconfig.cache
+C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\bin\Debug\netcoreapp3.1\OrganisationArchive.DAL.deps.json
+C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\bin\Debug\netcoreapp3.1\OrganisationArchive.DAL.runtimeconfig.json
+C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\bin\Debug\netcoreapp3.1\OrganisationArchive.DAL.runtimeconfig.dev.json
+C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\bin\Debug\netcoreapp3.1\OrganisationArchive.DAL.dll
+C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\bin\Debug\netcoreapp3.1\OrganisationArchive.DAL.pdb
+C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.csprojAssemblyReference.cache
+C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.AssemblyInfoInputs.cache
+C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.AssemblyInfo.cs
+C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.dll
+C:\Users\tamar\OneDrive\Desktop\project(6192020)\Final_Project\OrganisationArchive.DAL\obj\Debug\netcoreapp3.1\OrganisationArchive.DAL.pdb
