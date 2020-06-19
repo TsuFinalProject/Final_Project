@@ -19,12 +19,14 @@ namespace OrganisationArchive.Controllers
         }
         public ActionResult Organizations()
         {
-            return View();
+           var organization = _organizationService.GetOrganizations();
+            return View(organization);
         }
 
         public ActionResult Details(int id)
         {
-            return View();
+            var organization=_organizationService.GetOrganizationById(id);
+            return View(organization);
         }
 
         public ActionResult Create()
@@ -39,7 +41,7 @@ namespace OrganisationArchive.Controllers
             try
             {
                 _organizationService.AddOrganization(organization);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Organizations));
             }
             catch
             {
@@ -49,17 +51,18 @@ namespace OrganisationArchive.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            var organization = _organizationService.GetOrganizationById(id);
+            return View(organization);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Organization organization)
         {
             try
             {
-
-                return RedirectToAction(nameof(Index));
+                _organizationService.UpdateOrganization(organization);
+                return RedirectToAction(nameof(Organizations));
             }
             catch
             {
@@ -68,16 +71,18 @@ namespace OrganisationArchive.Controllers
         }
         public ActionResult Delete(int id)
         {
-            return View();
+            var organization = _organizationService.GetOrganizationById(id);
+            return View(organization);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Organization organization)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _organizationService.DeleteOrganization(organization);
+                return RedirectToAction(nameof(Organizations));
             }
             catch
             {
