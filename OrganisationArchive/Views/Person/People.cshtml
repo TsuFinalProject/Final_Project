@@ -89,20 +89,22 @@
 </table>
     *@
 @Html.ActionLink("Add person", "AddPerson", "Person", null, new { @class = "btn btn-primary btn-large" })
+<div class="card-rows">
+    <div class="card-columns">
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <div class="card-img">
+                    <img src="~/images/@item.Image" alt="Alternate Text" />
+                    <h5>@item.Name @item.Lastname</h5>
+                </div>
+                <div class="card-body">
 
-<div class="card-columns">
-    @foreach (var item in Model)
-    {
-        <div class="card">
-            <div class="card-img">
-                <img src="~/images/@item.Image" style="width:100%" alt="Alternate Text" />
+                    <a class="btn" asp-controller="Person" asp-action="Edit" asp-route-Id="@item.Id">Edit</a>
+                    <a class="btn" asp-controller="Person" asp-action="Details" asp-route-Id="@item.Id">Details</a>
+                    <a class="btn" asp-controller="Person" asp-action="Delete" asp-route-Id="@item.Id">Delete</a>
+                </div>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">@item.Name @item.Lastname</h5>
-                <a class="EditDetailBtn" href="/Person/Edit/@item.Id">Edit</a>
-                <a class="EditDetailBtn" href="/Person/Details/@item.Id">Details</a>
-                <a class="EditDetailBtn" href="/Person/Delete/@item.Id">Delete</a>
-            </div>
-        </div>
-    }
+        }
+    </div>
 </div>
