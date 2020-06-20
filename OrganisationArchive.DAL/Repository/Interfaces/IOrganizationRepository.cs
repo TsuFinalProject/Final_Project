@@ -7,5 +7,7 @@ namespace OrganisationArchive.DAL.Repository.Interfaces
 {
     public interface IOrganizationRepository: IRepositoryBase<Organization>
     {
+        IEnumerable<Organization> GetAllOrganizationsWithEmployee();
+        Organization GetOrganizationWithEmployeeById(int Id);
     }
 }

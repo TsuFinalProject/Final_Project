@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL.DataTransfer;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OrganisationArchive.DAL.Models;
+using OrganisationArchive.Models;
 
 namespace OrganisationArchive.Controllers
 {
@@ -19,7 +21,7 @@ namespace OrganisationArchive.Controllers
         }
         public ActionResult Organizations()
         {
-           var organization = _organizationService.GetOrganizations();
+           var organization = _organizationService.GetOrganizationsWithEmployee();
             return View(organization);
         }
 
@@ -31,22 +33,22 @@ namespace OrganisationArchive.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var orgVM = new OrganizationVM();
+            orgVM.OrgComponents = _organizationService.GetSelectListComponents();
+            return View(orgVM);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Organization organization)
+        public ActionResult Create(OrganizationVM organization)
         {
-            try
+            if(!ModelState.IsValid)
             {
-                _organizationService.AddOrganization(organization);
+                organization.OrgComponents = _organizationService.GetSelectListComponents();
                 return RedirectToAction(nameof(Organizations));
             }
-            catch
-            {
-                return View();
-            }
+            _organizationService.AddOrganization(organization.OrganizationForm);
+            return RedirectToAction("Organizations");
         }
 
         public ActionResult Edit(int id)
@@ -57,11 +59,11 @@ namespace OrganisationArchive.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, Organization organization)
+        public ActionResult Edit(int id,OrganizationVM organization)
         {
             try
             {
-                _organizationService.UpdateOrganization(organization);
+                _organizationService.UpdateOrganization(organization.OrganizationForm);
                 return RedirectToAction(nameof(Organizations));
             }
             catch
@@ -77,11 +79,11 @@ namespace OrganisationArchive.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, Organization organization)
+        public ActionResult Delete(int id, OrganizationVM organization)
         {
             try
             {
-                _organizationService.DeleteOrganization(organization);
+                _organizationService.DeleteOrganization(organization.OrganizationForm);
                 return RedirectToAction(nameof(Organizations));
             }
             catch

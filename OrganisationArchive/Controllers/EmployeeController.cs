@@ -6,19 +6,23 @@ using BLL.Services.Implementations;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using OrganisationArchive.DAL.Migrations;
 using OrganisationArchive.DAL.Models;
 using OrganisationArchive.DAL.Repository.Interfaces;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace OrganisationArchive.Controllers
 {
     public class EmployeeController : Controller
     {
         private IEmployeeService _employee;
+        private IPersonService _personService;
 
-        public EmployeeController(IEmployeeService employee)
+        public EmployeeController(IEmployeeService employee, IPersonService personService)
         {
-            _employee = employee;      
+            _employee = employee;
+            _personService = personService;
         }
         // GET: EmployeeController
         public ActionResult Employees()
@@ -35,9 +39,9 @@ namespace OrganisationArchive.Controllers
         }
 
         // GET: EmployeeController/Create
-        public ActionResult Create()
+        public ActionResult Create(DAL.Models.Organization organization)
         {
-            
+            var person = _personService.getPeople();
             return View();
         }
 

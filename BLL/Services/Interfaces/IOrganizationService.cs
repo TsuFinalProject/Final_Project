@@ -1,4 +1,5 @@
-﻿using OrganisationArchive.DAL.Models;
+﻿using BLL.DataTransfer;
+using OrganisationArchive.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,10 +8,11 @@ namespace BLL.Services.Interfaces
 {
     public interface IOrganizationService
     {
-        IEnumerable<Organization> GetOrganizations();
-        Organization GetOrganizationById(int Id);
-        void DeleteOrganization(Organization organization);
-        void UpdateOrganization(Organization organization);
-        void AddOrganization(Organization organization);
+        IEnumerable<OrganizationDTO> GetOrganizationsWithEmployee();
+        OrganizationForm GetOrganizationById(int Id);
+        void DeleteOrganization(OrganizationForm organization);
+        void UpdateOrganization(OrganizationForm organization);
+        void AddOrganization(OrganizationForm organization);
+        SelectListOrg GetSelectListComponents();
     }
 }
