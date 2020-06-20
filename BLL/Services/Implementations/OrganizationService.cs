@@ -2,12 +2,14 @@
 using BLL.DataTransfer;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using OrganisationArchive.DAL.Migrations;
 using OrganisationArchive.DAL.Models;
 using OrganisationArchive.DAL.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Organization = OrganisationArchive.DAL.Models.Organization;
 
 namespace BLL.Services.Implementations
 {

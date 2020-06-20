@@ -1,0 +1,33 @@
+﻿@model OrganizationVM
+
+
+
+
+
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+    <label asp-for="OrganizationForm.Name" class="control-label"></label>
+    <input asp-for="OrganizationForm.Name" class="form-control" />
+    <span asp-validation-for="OrganizationForm.Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="OrganizationForm.Address" class="control-label"></label>
+    <input asp-for="OrganizationForm.Address" class="form-control" />
+    <span asp-validation-for="OrganizationForm.Address" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="OrganizationForm.Work" class="control-label"></label>
+    <input asp-for="OrganizationForm.Work" class="form-control" />
+    <span asp-validation-for="OrganizationForm.Work" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="OrganizationForm.EmployeeIds" class="control-label"></label>
+    <select asp-for="OrganizationForm.EmployeeIds" asp-items="Model.OrgComponents.EmployeeList" multiple class="selectpicker"></select>
+    <span asp-validation-for="OrganizationForm.EmployeeIds" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="OrganizationForm.position" class="control-label"></label>
+    <input asp-for="OrganizationForm.position" class="form-control" />
+    <span asp-validation-for="OrganizationForm.position" class="text-danger"></span>
+</div>
