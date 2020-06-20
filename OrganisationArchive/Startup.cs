@@ -14,6 +14,8 @@ using Microsoft.Extensions.Hosting;
 using OrganisationArchive.DAL;
 using OrganisationArchive.DAL.Repository.Implementations;
 using OrganisationArchive.DAL.Repository.Interfaces;
+using AutoMapper;
+using BLL.Mapping;
 
 namespace OrganisationArchive
 {
@@ -45,9 +47,12 @@ namespace OrganisationArchive
             services.AddScoped<IOrganizationService, OrganizationService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
 
-            services.AddScoped<IUOW,UOW>();
+            services.AddScoped<IUOW, UOW>();
 
+
+            services.AddAutoMapper((typeof(MapProfile)).Assembly); 
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
