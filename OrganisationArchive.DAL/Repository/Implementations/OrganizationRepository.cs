@@ -15,7 +15,7 @@ namespace OrganisationArchive.DAL.Repository.Implementations
         }
 
         public IEnumerable<Organization> GetAllOrganizationsWithEmployee()
-        {
+        {  
             return _context.Organizations
                 .Include(x => x.Employees)
                 .ThenInclude(x => x.Person);

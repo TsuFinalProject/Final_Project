@@ -80,7 +80,7 @@ namespace OrganisationArchive
                     name: "default",
                     pattern: "{controller=Person}/{action=People}/{id?}");
             });
-            MigrateDb(app, env);
+            //MigrateDb(app, env);
         }
         private void MigrateDb(IApplicationBuilder app, IWebHostEnvironment env)
         {
