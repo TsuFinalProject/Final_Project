@@ -96,9 +96,9 @@
             <div class="card">
                 <div class="card-img">
                     <img src="~/images/@item.Image" alt="Alternate Text" />
-                    <h5>@item.Name @item.Lastname</h5>
                 </div>
                 <div class="card-body">
+                    <h5>@item.Name @item.Lastname</h5>
 
                     <a class="btn" asp-controller="Person" asp-action="Edit" asp-route-Id="@item.Id">Edit</a>
                     <a class="btn" asp-controller="Person" asp-action="Details" asp-route-Id="@item.Id">Details</a>
