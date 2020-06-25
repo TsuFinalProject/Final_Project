@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using OrganisationArchive.DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace OrganisationArchive.DAL
 {
-    public class OrganizationDbContext : DbContext
+    public class OrganizationDbContext : IdentityDbContext<AppUser>
     {
         public DbSet<Person> People { get; set; }
         public DbSet<Organization> Organizations { get; set; }
