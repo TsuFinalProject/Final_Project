@@ -52,6 +52,16 @@ namespace OrganisationArchive
             services.AddIdentity<AppUser, IdentityRole>()
                 .AddEntityFrameworkStores<OrganizationDbContext>()
                 .AddDefaultTokenProviders();
+            services.AddIdentity<AppUser, IdentityRole>(opts => {
+                opts.User.RequireUniqueEmail = true;
+                opts.Password.RequireDigit = false;
+                opts.Password.RequiredLength = 3;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+                opts.Password.RequireNonAlphanumeric = false;
+            })
+               .AddEntityFrameworkStores<OrganizationDbContext>()
+               .AddDefaultTokenProviders();
 
             services.AddScoped<IUOW, UOW>();
 
@@ -88,7 +98,7 @@ namespace OrganisationArchive
                     name: "default",
                     pattern: "{controller=Person}/{action=People}/{id?}");
             });
-            //MigrateDb(app, env);
+            MigrateDb(app, env);
         }
         private void MigrateDb(IApplicationBuilder app, IWebHostEnvironment env)
         {
