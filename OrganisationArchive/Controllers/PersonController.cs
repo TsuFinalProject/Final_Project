@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OrganisationArchive.DAL.Enums;
 using OrganisationArchive.DAL.Models;
+using OrganisationArchive.Models;
 
 namespace OrganisationArchive.Controllers
 {
@@ -18,10 +19,29 @@ namespace OrganisationArchive.Controllers
         {
             this.personService = personService;
         }
-        public IActionResult People()
+        public async Task<IActionResult> People(
+            string currentFilter,
+            string searchString,
+            int? pageNumber)
         {
-            IEnumerable<Person> people = personService.getPeople();
-            return View(people);
+            ViewBag.CurrentFilter = searchString;
+
+            var people = personService.getPeople();
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                people = people.Where(x => x.Name.Contains(searchString) || x.Lastname.Contains(searchString) || x.PersonalNumber.Contains(searchString));
+            }
+            var pageSize = 4;
+            var pagination = await PaginatedList<Person>.CreateAsync(people, pageNumber ?? 1, pageSize);
+            return View(pagination);
         }
         [HttpGet]
         public IActionResult AddPerson()
@@ -82,6 +102,10 @@ namespace OrganisationArchive.Controllers
         [HttpPost]
         public IActionResult UploadPhoto(Person person)
         {
+            if (person.ImageFile == null)
+            {
+                return RedirectToAction("Edit", new { id = person.Id });
+            }
             //var personWithPhoto = person;
             personService.UploadPhoto(person);
             return RedirectToAction("Edit", new { id = person.Id });

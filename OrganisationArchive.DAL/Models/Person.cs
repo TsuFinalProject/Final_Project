@@ -32,6 +32,7 @@ namespace OrganisationArchive.DAL.Models
         public string PhoneNumber { get; set; }
         public ICollection<Employee> Employees { get; set; }
         [NotMapped]
+        //
         public IFormFile ImageFile { get; set; }
     }
 }
