@@ -16,6 +16,8 @@ using OrganisationArchive.DAL.Repository.Implementations;
 using OrganisationArchive.DAL.Repository.Interfaces;
 using AutoMapper;
 using BLL.Mapping;
+using OrganisationArchive.DAL.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace OrganisationArchive
 {
@@ -47,10 +49,16 @@ namespace OrganisationArchive
             services.AddScoped<IOrganizationService, OrganizationService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
 
+            services.AddIdentity<AppUser, IdentityRole>()
+                .AddEntityFrameworkStores<OrganizationDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddScoped<IUOW, UOW>();
 
 
-            services.AddAutoMapper((typeof(MapProfile)).Assembly); 
+            services.AddAutoMapper((typeof(MapProfile)).Assembly);
+
+           
         }
 
 
