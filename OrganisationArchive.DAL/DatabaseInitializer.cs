@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using OrganisationArchive.DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,21 @@ namespace OrganisationArchive.DAL
     public class DatabaseInitializer : IDatabaseInitializer
     {
         private OrganizationDbContext _context;
-        public DatabaseInitializer(OrganizationDbContext context)
+        private UserManager<AppUser> _userManager;
+        public DatabaseInitializer(OrganizationDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
         public async Task Seed()
         {
+            await _userManager.CreateAsync(new AppUser()
+            {
+                UserName = "mariami",
+                Email = "mariami@gmail.com",
+                PhoneNumber = "598748569",
+            }, "adminadmin"
+            );
             _context.Organizations.Add(
                  new Organization
                  {
