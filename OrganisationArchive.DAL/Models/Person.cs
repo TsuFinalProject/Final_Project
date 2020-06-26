@@ -12,15 +12,21 @@ namespace OrganisationArchive.DAL.Models
     {
         public int Id { get; set; }
         [Required]
+        [RegularExpression(@"[A-Za-z]{1,20}$",
+         ErrorMessage = "Invalid First Name")]
         public string Name { get; set; }
         [Required]
+        [RegularExpression(@"[A-Za-z]{1,30}$",
+         ErrorMessage = "Invalid Lastname")]
         public string Lastname { get; set; }
         [Required]
         public string Gender { get; set; }
         
         [Required]
         [StringLength(11, MinimumLength = 11, ErrorMessage = "It must be  11 characters")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = "Invalid Peorsonal Number")]
         public string PersonalNumber { get; set; }
+
         [Required]
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
@@ -29,10 +35,10 @@ namespace OrganisationArchive.DAL.Models
         public string City { get; set; }
         [Required]
         [Phone]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = "Invalid Phone Number")]
         public string PhoneNumber { get; set; }
         public ICollection<Employee> Employees { get; set; }
         [NotMapped]
-        //
         public IFormFile ImageFile { get; set; }
     }
 }

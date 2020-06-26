@@ -67,5 +67,11 @@ namespace BLL.Services.Implementations
 
             return model;
         }
+
+        public IEnumerable<Organization> GetOrganizations()
+        {
+           var organizations = _UOW.Organization.GetAllOrganizationsWithEmployee();
+            return (organizations);
+        }
     }
 }

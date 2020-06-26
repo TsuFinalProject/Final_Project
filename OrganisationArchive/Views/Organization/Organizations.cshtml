@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BLL.DataTransfer.OrganizationDTO>
+﻿@model OrganisationArchive.Models.PaginatedList<OrganisationArchive.DAL.Models.Organization>
+
 
 @{
     ViewData["Title"] = "Organizations";
@@ -6,7 +7,15 @@
 }
 
 <h1>Organizations</h1>
-
+<form asp-action="Organizations" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find: <input type="text" name="SearchString" value="@ViewBag.currentFilter" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a class="btn btn-primary" asp-action="Organizations">Back to Full List</a>
+        </p>
+    </div>
+</form>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -14,35 +23,54 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+               Address
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Work)
+                Work
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Work)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Work)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Organizations"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Organizations"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

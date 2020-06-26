@@ -15,5 +15,6 @@ namespace BLL.Services.Interfaces
         void UpdateOrganization(OrganizationForm organization);
         void AddOrganization(OrganizationForm organization);
         SelectListOrg GetSelectListComponents();
+        IEnumerable<OrganisationArchive.DAL.Models.Organization> GetOrganizations();
     }
 }

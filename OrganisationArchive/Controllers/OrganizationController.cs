@@ -22,10 +22,28 @@ namespace OrganisationArchive.Controllers
         {
             _organizationService = organizationService;
         }
-        public ActionResult Organizations()
+        public async Task<ActionResult> Organizations(string currentFilter,
+            string searchString,
+            int? pageNumber)
         {
-           var organization = _organizationService.GetOrganizationsWithEmployee();
-            return View(organization);
+            ViewBag.CurrentFilter = searchString;
+
+            var organization = _organizationService.GetOrganizations();
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                organization = organization.Where(x => x.Work.ToUpperInvariant().Contains(searchString.ToUpperInvariant()) || x.Address.ToUpperInvariant().Contains(searchString.ToUpperInvariant()) || x.Name.ToUpperInvariant().Contains(searchString.ToUpperInvariant()));
+            }
+            var pageSize = 4;
+            var pagination = await PaginatedList<Organization>.CreateAsync(organization, pageNumber ?? 1, pageSize);
+            return View(pagination);
         }
 
         public ActionResult Details(int id)
