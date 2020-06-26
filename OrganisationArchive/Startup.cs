@@ -18,6 +18,8 @@ using AutoMapper;
 using BLL.Mapping;
 using OrganisationArchive.DAL.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace OrganisationArchive
 {
@@ -49,20 +51,20 @@ namespace OrganisationArchive
             services.AddScoped<IOrganizationService, OrganizationService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
 
-            services.AddIdentity<AppUser, IdentityRole>()
-                .AddEntityFrameworkStores<OrganizationDbContext>()
-                .AddDefaultTokenProviders();
-            services.AddIdentity<AppUser, IdentityRole>(opts => {
-                opts.User.RequireUniqueEmail = true;
-                opts.Password.RequireDigit = false;
-                opts.Password.RequiredLength = 3;
-                opts.Password.RequireLowercase = false;
-                opts.Password.RequireUppercase = false;
-                opts.Password.RequireNonAlphanumeric = false;
-            })
-               .AddEntityFrameworkStores<OrganizationDbContext>()
-               .AddDefaultTokenProviders();
 
+
+            services.AddIdentity<AppUser, IdentityRole>(opts => {
+                opts.Password.RequiredLength = 3;
+                opts.Password.RequireDigit = false;
+                opts.User.RequireUniqueEmail = true;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireUppercase = false;
+            })
+            .AddEntityFrameworkStores<OrganizationDbContext>()
+            .AddDefaultTokenProviders();
+
+            services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Auth/Login");
             services.AddScoped<IUOW, UOW>();
 
 
