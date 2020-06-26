@@ -49,5 +49,10 @@ namespace OrganisationArchive.Controllers
            
             return View(userLogin);
         }
+        public async Task<IActionResult> Logout()
+        {
+            await signManager.SignOutAsync();
+            return RedirectToAction("Login");
+        }
     }
 }

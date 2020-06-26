@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BLL.DataTransfer;
 using BLL.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -12,6 +13,7 @@ using OrganisationArchive.Models;
 
 namespace OrganisationArchive.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class OrganizationController : Controller
     {
         private IOrganizationService _organizationService;

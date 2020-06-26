@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using OrganisationArchive.DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -12,22 +11,38 @@ namespace OrganisationArchive.DAL
     {
         private OrganizationDbContext _context;
         private UserManager<AppUser> _userManager;
+        private RoleManager<IdentityRole> _roleManager;
 
-        public DatabaseInitializer(OrganizationDbContext context, UserManager<AppUser> userManager)
+        public DatabaseInitializer(OrganizationDbContext context, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _context = context;
+            _roleManager = roleManager;
             _userManager = userManager;
         }
         public async Task Seed()
         {
-            
-            await _userManager.CreateAsync(new AppUser()
+            //Admin
+            var Admin = await _userManager.FindByNameAsync("admin");
+
+            if (Admin == null)
             {
-                UserName = "mariami",
-                Email = "mariami@gmail.com",
-                PhoneNumber = "598748569",
-            }, "adminMari"
-            );
+                await _userManager.CreateAsync(new AppUser()
+                {
+                    UserName = "admin",
+                    Email = "admin@admin.com",
+                    PhoneNumber = "78945612",
+                }, "test");
+            }
+            //Admin role
+            var role = await _roleManager.FindByNameAsync("Admin");
+
+            if (role == null)
+            {
+                await _roleManager.CreateAsync(new IdentityRole() {Name = "Admin" });
+            }
+            var AdminRole = await _userManager.FindByNameAsync("admin");
+            await _userManager.AddToRoleAsync(AdminRole, "Admin");
+
             _context.Organizations.Add(
                  new Organization
                  {
