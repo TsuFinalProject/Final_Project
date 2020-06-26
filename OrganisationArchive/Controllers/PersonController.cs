@@ -39,7 +39,7 @@ namespace OrganisationArchive.Controllers
             }
             if (!String.IsNullOrEmpty(searchString))
             {
-                people = people.Where(x => x.Name.Contains(searchString) || x.Lastname.Contains(searchString) || x.PersonalNumber.Contains(searchString));
+                people = people.Where(x => x.Name.ToUpperInvariant().Contains(searchString.ToUpperInvariant()) || x.Lastname.ToUpperInvariant().Contains(searchString.ToUpperInvariant()) || x.PersonalNumber.Contains(searchString));
             }
             var pageSize = 4;
             var pagination = await PaginatedList<Person>.CreateAsync(people, pageNumber ?? 1, pageSize);
