@@ -12,7 +12,6 @@ namespace OrganisationArchive.DAL
         public DbSet<Person> People { get; set; }
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<User> Users { get; set; }
         public OrganizationDbContext(DbContextOptions options) : base(options)
         {           
         }
@@ -73,10 +72,6 @@ namespace OrganisationArchive.DAL
             modelBuilder.Entity<Organization>()
                 .Property(n => n.Work)
                 .IsRequired();
-            //user 
-            modelBuilder.Entity<User>()
-                .Property(n => n.Username)
-                .HasMaxLength(20);
         }
     }
 }

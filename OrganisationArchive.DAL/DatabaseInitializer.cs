@@ -12,6 +12,7 @@ namespace OrganisationArchive.DAL
     {
         private OrganizationDbContext _context;
         private UserManager<AppUser> _userManager;
+
         public DatabaseInitializer(OrganizationDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
@@ -19,12 +20,13 @@ namespace OrganisationArchive.DAL
         }
         public async Task Seed()
         {
+            
             await _userManager.CreateAsync(new AppUser()
             {
                 UserName = "mariami",
                 Email = "mariami@gmail.com",
                 PhoneNumber = "598748569",
-            }, "adminadmin"
+            }, "adminMari"
             );
             _context.Organizations.Add(
                  new Organization

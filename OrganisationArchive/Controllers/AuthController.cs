@@ -24,12 +24,13 @@ namespace OrganisationArchive.Controllers
         }
 
 
-
+        [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
-        public async Task<IActionResult> LoginAsync(Login userLogin)
+        [HttpPost]
+        public async Task<IActionResult> Login(Login userLogin)
         {
             if (ModelState.IsValid)
             {
