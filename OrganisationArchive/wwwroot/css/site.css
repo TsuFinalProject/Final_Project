@@ -1,4 +1,5 @@
-﻿* {
+﻿
+* {
     margin: 0;
     padding: 0;
 }
@@ -64,4 +65,10 @@ h5 {
 
 input{
     padding:4px;
+}
+
+
+
+.row dd {
+    padding-left: 20%;
 }
