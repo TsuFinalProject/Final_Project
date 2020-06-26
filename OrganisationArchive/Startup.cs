@@ -52,19 +52,18 @@ namespace OrganisationArchive
             services.AddScoped<IEmployeeService, EmployeeService>();
 
 
-
             services.AddIdentity<AppUser, IdentityRole>(opts => {
-                opts.Password.RequiredLength = 3;
-                opts.Password.RequireDigit = false;
                 opts.User.RequireUniqueEmail = true;
+                opts.Password.RequireDigit = false;
+                opts.Password.RequiredLength = 3;
                 opts.Password.RequireLowercase = false;
-                opts.Password.RequireNonAlphanumeric = false;
                 opts.Password.RequireUppercase = false;
+                opts.Password.RequireNonAlphanumeric = false;
             })
             .AddEntityFrameworkStores<OrganizationDbContext>()
             .AddDefaultTokenProviders();
-
             services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Auth/Login");
+
             services.AddScoped<IUOW, UOW>();
 
 
@@ -87,6 +86,7 @@ namespace OrganisationArchive
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -100,7 +100,7 @@ namespace OrganisationArchive
                     name: "default",
                     pattern: "{controller=Person}/{action=People}/{id?}");
             });
-            MigrateDb(app, env);
+            //MigrateDb(app, env);
         }
         private void MigrateDb(IApplicationBuilder app, IWebHostEnvironment env)
         {

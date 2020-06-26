@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BLL.Services.Helper;
 using BLL.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OrganisationArchive.DAL.Enums;
@@ -12,6 +13,7 @@ using OrganisationArchive.Models;
 
 namespace OrganisationArchive.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class PersonController : Controller
     {
         IPersonService personService;
