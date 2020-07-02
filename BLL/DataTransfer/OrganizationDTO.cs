@@ -16,5 +16,6 @@ namespace BLL.DataTransfer
         [Required]
         public string Work { get; set; }
         public List<string> Employees { get; set; }
+        
     }
 }

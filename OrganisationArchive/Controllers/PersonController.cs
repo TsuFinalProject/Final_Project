@@ -61,6 +61,8 @@ namespace OrganisationArchive.Controllers
                 personService.AddPerson(person);
                 return RedirectToAction("People", person );
             }
+            ViewBag.Gender = typeof(Gender).GetAllEnumNames();
+            ViewBag.City = typeof(City).GetAllEnumNames();
             return View(person);
         }
 
@@ -83,7 +85,9 @@ namespace OrganisationArchive.Controllers
 
                 return Redirect(Url.Action("People", "Person"));
             }
-            return View(person.Id);
+            ViewBag.Gender = typeof(Gender).GetAllEnumNames();
+            ViewBag.City = typeof(City).GetAllEnumNames();
+            return View(person);
         }
 
         [HttpGet]

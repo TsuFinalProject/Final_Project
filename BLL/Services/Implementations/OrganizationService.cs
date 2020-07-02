@@ -1,14 +1,16 @@
 ﻿using AutoMapper;
 using BLL.DataTransfer;
+using BLL.Services.Helper;
 using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using OrganisationArchive.DAL.Migrations;
+using OrganisationArchive.DAL.Enums;
 using OrganisationArchive.DAL.Models;
 using OrganisationArchive.DAL.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Organization = OrganisationArchive.DAL.Models.Organization;
 
 namespace BLL.Services.Implementations
@@ -23,35 +25,34 @@ namespace BLL.Services.Implementations
             _UOW = UOW;
             _mapper = mapper;
         }
-        public void AddOrganization(OrganizationForm organization)
+        public OrganizationDTO AddOrganization(OrganizationDTO organization)
         {
             var org = _mapper.Map<Organization>(organization);
-            _UOW.Organization.Create(org);
+            var createdOrganization = _UOW.Organization.Create(org);
+            _UOW.commit();
+            return _mapper.Map<OrganizationDTO>(createdOrganization);
+        }
+
+        public void DeleteOrganization(int Id)
+        {
+            
+            _UOW.Organization.Delete(_UOW.Organization.GetOrganizationWithEmployeeById(Id));
             _UOW.commit();
         }
 
-        public void DeleteOrganization(OrganizationForm organization)
-        {
-            var org = _mapper.Map<Organization>(organization);
-            _UOW.Organization.Delete(org);
-            _UOW.commit();
-        }
-
-        public OrganizationForm GetOrganizationById(int Id)
+        public OrganizationDTO GetOrganizationById(int Id)
         {
             var org = _UOW.Organization.GetOrganizationWithEmployeeById(Id);
-            return _mapper.Map<OrganizationForm>(org);
-        }
-
-        public IEnumerable<OrganizationDTO> GetOrganizationsWithEmployee()
-        {
-            var orgs =  _UOW.Organization.GetAllOrganizationsWithEmployee();
-            return _mapper.Map<IEnumerable<OrganizationDTO>>(orgs);
+            return _mapper.Map<OrganizationDTO>(org);
         }
         public void UpdateOrganization(OrganizationForm organization)
         {
             var dbModel = _UOW.Organization.GetOrganizationWithEmployeeById(organization.Id);
-            _mapper.Map<OrganizationForm, Organization>(organization, dbModel);
+            dbModel.Employees.Add(new Employee()
+            {
+                PersonId = organization.EmployeeId,
+                Position = organization.position
+            });
             _UOW.Organization.Update(dbModel);
             _UOW.commit();
         }
@@ -64,7 +65,11 @@ namespace BLL.Services.Implementations
             model.EmployeeList = persons.Select(x =>
               new SelectListItem()
               { Text = $"{x.Name} {x.Lastname}", Value = x.Id.ToString() }).ToList();
-
+            model.PositionList = typeof(Position).GetAllEnumNames().Select(x => new SelectListItem()
+            {
+                Text = x,
+                Value = x
+            }).ToList() ;
             return model;
         }
 
@@ -72,6 +77,31 @@ namespace BLL.Services.Implementations
         {
            var organizations = _UOW.Organization.GetAllOrganizationsWithEmployee();
             return (organizations);
+        }
+
+        public void UpdateOrganizationWithoutEmpl(OrganizationDTO organization)
+        {
+            var dbModel = _UOW.Organization.GetOrganizationWithEmployeeById(organization.Id);
+            dbModel.Address = organization.Address;
+            dbModel.Name = organization.Name;
+            dbModel.Work = organization.Work;
+            _UOW.Organization.Update(dbModel);
+            _UOW.commit();
+        }
+
+        public OrganizationForm GetOrganizationWithEmpById(int id)
+        {
+            var org = _UOW.Organization.GetOrganizationWithEmployeeById(id);
+            return _mapper.Map<OrganizationForm>(org);
+        }
+
+        public bool IsValid(OrganizationDTO organization)
+        {
+            if((organization.Name.Length>0 && organization.Name.Length<=50) && (organization.Address.Length>5&& organization.Address.Length <= 100))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

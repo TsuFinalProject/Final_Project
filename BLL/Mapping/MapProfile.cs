@@ -12,19 +12,31 @@ namespace BLL.Mapping
     {
         public MapProfile()
         {
-            CreateMap<Organization, OrganizationDTO>()
-                .ForMember(from =>
-                    from.Employees,
-                    to => to.MapFrom(src => src.Employees.Select(x => $"{x.Person.Name} {x.Person.Lastname }").ToList()));
-            CreateMap<OrganizationForm, Organization>()
-                .ForMember(from =>
-                    from.Employees,
-                    to => to.MapFrom(src => src.EmployeeIds.Select(x => new Employee() { PersonId = x ,Position=src.position})));
 
+            CreateMap<Organization, OrganizationDTO>()
+                .ForMember(to =>
+                    to.Employees,
+                  from => from.MapFrom(src => src.Employees.Select(x => $"{x.Person.Name} {x.Person.Lastname }").ToList()));
+            CreateMap<OrganizationDTO, Organization>()
+                .ForMember(to =>
+                    to.Id,
+                  from => from.MapFrom(src => src.Id))
+                  .ForMember(to =>
+                    to.Name,
+                  from => from.MapFrom(src => src.Name))
+                  .ForMember(to =>
+                    to.Work,
+                  from => from.MapFrom(src => src.Work))
+                  .ForMember(to =>
+                    to.Address,
+                  from => from.MapFrom(src => src.Address))
+                  ;
             CreateMap<Organization, OrganizationForm>()
-                 .ForMember(from =>
-                    from.EmployeeIds,
-                    to => to.MapFrom(src => src.Employees.Select(x => x.PersonId).ToList()));
+                 .ForMember(to =>           
+                    to.EmployeeId,
+                    from => from.MapFrom(src => src.Employees.Select(x => x.PersonId).FirstOrDefault()));
+
+
         }
     }
 }

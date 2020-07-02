@@ -9,12 +9,14 @@ namespace BLL.Services.Interfaces
 {
     public interface IOrganizationService
     {
-        IEnumerable<OrganizationDTO> GetOrganizationsWithEmployee();
-        OrganizationForm GetOrganizationById(int Id);
-        void DeleteOrganization(OrganizationForm organization);
-        void UpdateOrganization(OrganizationForm organization);
-        void AddOrganization(OrganizationForm organization);
-        SelectListOrg GetSelectListComponents();
-        IEnumerable<OrganisationArchive.DAL.Models.Organization> GetOrganizations();
+        OrganizationDTO GetOrganizationById(int Id); 
+        void DeleteOrganization(int Id); 
+        void UpdateOrganizationWithoutEmpl(OrganizationDTO organization);
+        void UpdateOrganization(OrganizationForm organization); 
+        OrganizationDTO AddOrganization(OrganizationDTO organization); 
+        SelectListOrg GetSelectListComponents(); 
+        IEnumerable<OrganisationArchive.DAL.Models.Organization> GetOrganizations(); 
+        OrganizationForm GetOrganizationWithEmpById(int id); 
+        bool IsValid(OrganizationDTO organization);
     }
 }

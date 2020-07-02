@@ -11,40 +11,44 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.OrganizationForm.Name)
+            @Html.DisplayNameFor(model => model.OrganizationDTO.Name)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.OrganizationForm.Name)
+            @Html.DisplayFor(model => model.OrganizationDTO.Name)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.OrganizationForm.Address)
+            @Html.DisplayNameFor(model => model.OrganizationDTO.Address)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.OrganizationForm.Address)
+            @Html.DisplayFor(model => model.OrganizationDTO.Address)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.OrganizationForm.Work)
+            @Html.DisplayNameFor(model => model.OrganizationDTO.Work)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.OrganizationForm.Work)
+            @Html.DisplayFor(model => model.OrganizationDTO.Work)
         </dd>
-        
+
         <dt class="col-sm-2">
-            <label class="control-label" > Employees  </label>
+            <label class="control-label"> Employees  </label>
         </dt>
-        <dd  class="col-sm-10" >
-            @foreach (var item in Model.OrganizationForm.EmployeeIds)
-           {
-        <li>@Model.OrgComponents.EmployeeList.Where(x => x.Value == item.ToString()).SingleOrDefault().Text</li>
-              }
-          </dd>
+        <dd>
+            @foreach (var item in Model.OrganizationDTO.Employees)
+            {
+                <li>
+
+                    @item
+                </li>
+
+            }
+        </dd>
     </dl>
-  
 
 
-    
+
+
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.OrganizationForm.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.OrganizationDTO.Id">Edit</a> |
     <a asp-action="Organizations">Back to List</a>
 </div>

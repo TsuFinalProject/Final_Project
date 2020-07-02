@@ -8,6 +8,6 @@ namespace BLL.DataTransfer
     public class SelectListOrg
     {
         public List<SelectListItem> EmployeeList { get; set; }
-
+        public List<SelectListItem> PositionList { get; set; }
     }
 }

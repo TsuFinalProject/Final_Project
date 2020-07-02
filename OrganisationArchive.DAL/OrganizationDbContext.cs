@@ -34,8 +34,7 @@ namespace OrganisationArchive.DAL
                 .HasForeignKey(f => f.OrganizationId);
 
             modelBuilder.Entity<Employee>()
-                .Property(x => x.Position)
-                .IsRequired();
+                .Property(x => x.Position);
 
             //Person
             modelBuilder.Entity<Person>().HasKey(x => x.Id);

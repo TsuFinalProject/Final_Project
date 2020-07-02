@@ -1,4 +1,4 @@
-﻿@model OrganisationArchive.DAL.Models.Organization
+﻿@model OrganizationVM
 
 @{
     ViewData["Title"] = "Delete";
@@ -13,27 +13,27 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.OrganizationDTO.Name)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.OrganizationDTO.Name)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
+            @Html.DisplayNameFor(model => model.OrganizationDTO.Address)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Address)
+            @Html.DisplayFor(model => model.OrganizationDTO.Address)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Work)
+            @Html.DisplayNameFor(model => model.OrganizationDTO.Work)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Work)
+            @Html.DisplayFor(model => model.OrganizationDTO.Work)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="OrganizationDTO.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Organizations">Back to List</a>
     </form>

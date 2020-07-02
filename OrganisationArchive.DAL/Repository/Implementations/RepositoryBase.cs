@@ -11,9 +11,10 @@ namespace OrganisationArchive.DAL.Repository.Implementations
             _context = context;
         }
 
-        public void Create(T entity)
+        public T Create(T entity)
         {
-            _context.Set<T>().Add(entity);
+            var CreatedEntity = _context.Set<T>().Add(entity).Entity;
+            return CreatedEntity;
         }
 
         public void Delete(T entity)

@@ -50,8 +50,7 @@ namespace OrganisationArchive.Controllers
         {
 
             OrganizationVM organizationVM = new OrganizationVM();
-
-           organizationVM.OrganizationForm= _organizationService.GetOrganizationById(id);
+            organizationVM.OrganizationDTO = _organizationService.GetOrganizationById(id);
             organizationVM.OrgComponents = _organizationService.GetSelectListComponents();
 
 
@@ -71,41 +70,57 @@ namespace OrganisationArchive.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(OrganizationVM organization)
         {
-            if(!ModelState.IsValid)
+            if (!_organizationService.IsValid(organization.OrganizationDTO))
             {
                 organization.OrgComponents = _organizationService.GetSelectListComponents();
-                return RedirectToAction(nameof(Organizations));
+                return View(organization);
             }
-            _organizationService.AddOrganization(organization.OrganizationForm);
-            return RedirectToAction("Organizations");
+            var CreatedOrganization = _organizationService.AddOrganization(organization.OrganizationDTO);
+            return RedirectToAction("Edit", CreatedOrganization);
         }
-
-        public ActionResult Edit(int id)
+        [HttpGet]
+        public ActionResult Edit(int id,OrganizationVM organization)
         {
             var orgVM = new OrganizationVM();
-            orgVM.OrganizationForm = _organizationService.GetOrganizationById(id);
-            orgVM.OrgComponents = _organizationService.GetSelectListComponents();
-
+            if (organization.OrganizationDTO != null)
+            {
+                orgVM = organization;
+            }
+            else
+            {
+                orgVM.OrganizationDTO = _organizationService.GetOrganizationById(id);
+                orgVM.OrgComponents = _organizationService.GetSelectListComponents();
+                orgVM.OrganizationForm = _organizationService.GetOrganizationWithEmpById(id);
+            }
             return View(orgVM);
 
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id,OrganizationVM organization)
+        public ActionResult Edit(OrganizationVM organization)
         {
 
-            if (!ModelState.IsValid) { return View(organization); }
 
-                _organizationService.UpdateOrganization(organization.OrganizationForm);
-                return RedirectToAction(nameof(Organizations));
-            
-                
+            _organizationService.UpdateOrganizationWithoutEmpl(organization.OrganizationDTO);
+            return RedirectToAction(nameof(Organizations));
         }
+
+        public ActionResult EditPosition(int id, OrganizationVM organization)
+        {
+            if (organization.OrganizationDTO == null)
+            {
+                _organizationService.AddOrganization(organization.OrganizationDTO);
+            }
+            _organizationService.UpdateOrganization(organization.OrganizationForm);   
+            return RedirectToAction(nameof(Edit),organization.OrganizationDTO);
+        }
+
         public ActionResult Delete(int id)
         {
-            var organization = _organizationService.GetOrganizationById(id);
-            return View(organization);
+            var orgVM = new OrganizationVM();
+            orgVM.OrganizationDTO = _organizationService.GetOrganizationById(id);
+            return View(orgVM);
         }
 
         [HttpPost]
@@ -114,7 +129,7 @@ namespace OrganisationArchive.Controllers
         {
             try
             {
-                _organizationService.DeleteOrganization(organization.OrganizationForm);
+                _organizationService.DeleteOrganization(organization.OrganizationDTO.Id);
                 return RedirectToAction(nameof(Organizations));
             }
             catch

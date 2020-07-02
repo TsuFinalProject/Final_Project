@@ -10,5 +10,6 @@ namespace OrganisationArchive.Models
     {
         public OrganizationForm OrganizationForm { get; set; }
         public SelectListOrg OrgComponents { get; set; }
+        public OrganizationDTO OrganizationDTO { get; set; }
     }
 }

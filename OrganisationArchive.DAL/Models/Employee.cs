@@ -10,7 +10,6 @@ namespace OrganisationArchive.DAL.Models
         public int Id { get; set; }
         public int PersonId{ get; set; }
         public int OrganizationId { get; set; }
-        [Required]
         public string Position { get; set; }
         public Person Person { get; set; }
         public Organization Organization { get; set; }

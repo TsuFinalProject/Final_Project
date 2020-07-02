@@ -14,18 +14,19 @@
     <div class="col-md-4">
         <form asp-action="Edit" asp-controller="Organization">
             <partial name="~/Views/Organization/Formtable.cshtml" model="Model" />
-            <input type="hidden" asp-for="OrganizationForm.Id" />
+            <input type="hidden" asp-for="OrganizationDTO.Id" />
             <div class="form-group">
-                <input type="submit" value="Edit" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Organizations">Back to List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+

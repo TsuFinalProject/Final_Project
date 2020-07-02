@@ -7,27 +7,60 @@
 
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 <div class="form-group">
-    <label asp-for="OrganizationForm.Name" class="control-label"></label>
-    <input asp-for="OrganizationForm.Name" class="form-control" />
-    <span asp-validation-for="OrganizationForm.Name" class="text-danger"></span>
+    <label asp-for="OrganizationDTO.Name" class="control-label"></label>
+    <input asp-for="OrganizationDTO.Name" class="form-control" />
+    <span asp-validation-for="OrganizationDTO.Name" class="text-danger"></span>
 </div>
 <div class="form-group">
-    <label asp-for="OrganizationForm.Address" class="control-label"></label>
-    <input asp-for="OrganizationForm.Address" class="form-control" />
-    <span asp-validation-for="OrganizationForm.Address" class="text-danger"></span>
+    <label asp-for="OrganizationDTO.Address" class="control-label"></label>
+    <input asp-for="OrganizationDTO.Address" class="form-control" />
+    <span asp-validation-for="OrganizationDTO.Address" class="text-danger"></span>
 </div>
 <div class="form-group">
-    <label asp-for="OrganizationForm.Work" class="control-label"></label>
-    <input asp-for="OrganizationForm.Work" class="form-control" />
-    <span asp-validation-for="OrganizationForm.Work" class="text-danger"></span>
+    <label asp-for="OrganizationDTO.Work" class="control-label"></label>
+    <input asp-for="OrganizationDTO.Work" class="form-control" />
+    <span asp-validation-for="OrganizationDTO.Work" class="text-danger"></span>
 </div>
-<div class="form-group">
-    <label asp-for="OrganizationForm.EmployeeIds" class="control-label"></label>
-    <select asp-for="OrganizationForm.EmployeeIds" asp-items="Model.OrgComponents.EmployeeList" multiple class="selectpicker"></select>
-    <span asp-validation-for="OrganizationForm.EmployeeIds" class="text-danger"></span>
-</div>
-<div class="form-group">
-    <label asp-for="OrganizationForm.position" class="control-label"></label>
-    <input asp-for="OrganizationForm.position" class="form-control" />
-    <span asp-validation-for="OrganizationForm.position" class="text-danger"></span>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Add Employee
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="OrganizationForm.Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="OrganizationForm.Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="OrganizationForm.Address" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="OrganizationForm.Work" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OrganizationForm.EmployeeId" class="control-label"></label>
+                <select asp-for="OrganizationForm.EmployeeId" asp-items="Model.OrgComponents.EmployeeList" class="selectpicker"></select>
+                <span asp-validation-for="OrganizationForm.EmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrganizationForm.position" class="control-label"></label>
+                <select asp-for="OrganizationForm.position" asp-items="Model.OrgComponents.PositionList"></select>
+                <span asp-validation-for="OrganizationForm.position" class="text-danger"></span>
+            </div>
+            <input asp-action="EditPosition" asp-controller="Organization" type="submit" value="Edit" class="btn btn-primary" />
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+
+    </div>
 </div>
