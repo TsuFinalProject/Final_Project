@@ -39,15 +39,6 @@
                 <input type="hidden" asp-for="OrganizationForm.Id" class="form-control" />
             </div>
             <div class="form-group">
-                <input type="hidden" asp-for="OrganizationForm.Name" class="form-control" />
-            </div>
-            <div class="form-group">
-                <input type="hidden" asp-for="OrganizationForm.Address" class="form-control" />
-            </div>
-            <div class="form-group">
-                <input type="hidden" asp-for="OrganizationForm.Work" class="form-control" />
-            </div>
-            <div class="form-group">
                 <label asp-for="OrganizationForm.EmployeeId" class="control-label"></label>
                 <select asp-for="OrganizationForm.EmployeeId" asp-items="Model.OrgComponents.EmployeeList" class="selectpicker"></select>
                 <span asp-validation-for="OrganizationForm.EmployeeId" class="text-danger"></span>

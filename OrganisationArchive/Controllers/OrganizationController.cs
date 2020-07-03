@@ -70,13 +70,13 @@ namespace OrganisationArchive.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(OrganizationVM organization)
         {
-            if (!_organizationService.IsValid(organization.OrganizationDTO))
+            if (TryValidateModel(organization, nameof(OrganizationDTO)))
             {
-                organization.OrgComponents = _organizationService.GetSelectListComponents();
-                return View(organization);
+                var CreatedOrganization = _organizationService.AddOrganization(organization.OrganizationDTO);
+                return RedirectToAction("Edit", CreatedOrganization);
             }
-            var CreatedOrganization = _organizationService.AddOrganization(organization.OrganizationDTO);
-            return RedirectToAction("Edit", CreatedOrganization);
+            organization.OrgComponents = _organizationService.GetSelectListComponents();
+            return View(organization);
         }
         [HttpGet]
         public ActionResult Edit(int id,OrganizationVM organization)
@@ -100,10 +100,12 @@ namespace OrganisationArchive.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(OrganizationVM organization)
         {
-
-
-            _organizationService.UpdateOrganizationWithoutEmpl(organization.OrganizationDTO);
-            return RedirectToAction(nameof(Organizations));
+            if (TryValidateModel(organization, nameof(OrganizationDTO)))
+            {
+                _organizationService.UpdateOrganizationWithoutEmpl(organization.OrganizationDTO);
+                return RedirectToAction(nameof(Organizations));
+            }
+            return View(organization);
         }
 
         public ActionResult EditPosition(int id, OrganizationVM organization)

@@ -8,7 +8,7 @@ namespace OrganisationArchive.Models
 {
     public class OrganizationVM
     {
-        public OrganizationForm OrganizationForm { get; set; }
+        public EmployeeBinder OrganizationForm { get; set; }
         public SelectListOrg OrgComponents { get; set; }
         public OrganizationDTO OrganizationDTO { get; set; }
     }

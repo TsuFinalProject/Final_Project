@@ -31,7 +31,7 @@ namespace BLL.Mapping
                     to.Address,
                   from => from.MapFrom(src => src.Address))
                   ;
-            CreateMap<Organization, OrganizationForm>()
+            CreateMap<Organization, EmployeeBinder>()
                  .ForMember(to =>           
                     to.EmployeeId,
                     from => from.MapFrom(src => src.Employees.Select(x => x.PersonId).FirstOrDefault()));

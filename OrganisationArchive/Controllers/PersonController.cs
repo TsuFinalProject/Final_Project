@@ -57,7 +57,6 @@ namespace OrganisationArchive.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 personService.AddPerson(person);
                 return RedirectToAction("People", person );
             }
@@ -112,15 +111,9 @@ namespace OrganisationArchive.Controllers
             {
                 return RedirectToAction("Edit", new { id = person.Id });
             }
-            //var personWithPhoto = person;
             personService.UploadPhoto(person);
             return RedirectToAction("Edit", new { id = person.Id });
 
         }
-
-
-
-
-
     }
 }

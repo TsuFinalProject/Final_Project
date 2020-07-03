@@ -45,7 +45,7 @@ namespace BLL.Services.Implementations
             var org = _UOW.Organization.GetOrganizationWithEmployeeById(Id);
             return _mapper.Map<OrganizationDTO>(org);
         }
-        public void UpdateOrganization(OrganizationForm organization)
+        public void UpdateOrganization(EmployeeBinder organization)
         {
             var dbModel = _UOW.Organization.GetOrganizationWithEmployeeById(organization.Id);
             dbModel.Employees.Add(new Employee()
@@ -89,10 +89,10 @@ namespace BLL.Services.Implementations
             _UOW.commit();
         }
 
-        public OrganizationForm GetOrganizationWithEmpById(int id)
+        public EmployeeBinder GetOrganizationWithEmpById(int id)
         {
             var org = _UOW.Organization.GetOrganizationWithEmployeeById(id);
-            return _mapper.Map<OrganizationForm>(org);
+            return _mapper.Map<EmployeeBinder>(org);
         }
 
         public bool IsValid(OrganizationDTO organization)

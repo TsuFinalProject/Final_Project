@@ -12,11 +12,11 @@ namespace BLL.Services.Interfaces
         OrganizationDTO GetOrganizationById(int Id); 
         void DeleteOrganization(int Id); 
         void UpdateOrganizationWithoutEmpl(OrganizationDTO organization);
-        void UpdateOrganization(OrganizationForm organization); 
+        void UpdateOrganization(EmployeeBinder organization); 
         OrganizationDTO AddOrganization(OrganizationDTO organization); 
         SelectListOrg GetSelectListComponents(); 
         IEnumerable<OrganisationArchive.DAL.Models.Organization> GetOrganizations(); 
-        OrganizationForm GetOrganizationWithEmpById(int id); 
+        EmployeeBinder GetOrganizationWithEmpById(int id); 
         bool IsValid(OrganizationDTO organization);
     }
 }
