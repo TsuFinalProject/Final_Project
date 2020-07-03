@@ -49,7 +49,6 @@ namespace OrganisationArchive
 
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<IOrganizationService, OrganizationService>();
-            services.AddScoped<IEmployeeService, EmployeeService>();
 
 
             services.AddIdentity<AppUser, IdentityRole>(opts => {
@@ -100,7 +99,7 @@ namespace OrganisationArchive
                     name: "default",
                     pattern: "{controller=Person}/{action=People}/{id?}");
             });
-            //MigrateDb(app, env);
+            MigrateDb(app, env);
         }
         private void MigrateDb(IApplicationBuilder app, IWebHostEnvironment env)
         {

@@ -72,3 +72,6 @@ input{
 .row dd {
     padding-left: 20%;
 }
+textarea{
+    resize:none
+}
