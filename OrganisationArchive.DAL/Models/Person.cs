@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using OrganisationArchive.DAL.CustomValidations;
 using OrganisationArchive.DAL.Enums;
 using System;
 using System.Collections.Generic;
@@ -26,9 +27,10 @@ namespace OrganisationArchive.DAL.Models
         [StringLength(11, MinimumLength = 11, ErrorMessage = "It must be  11 characters")]
         [RegularExpression(@"^[0-9]*$", ErrorMessage = "Invalid Peorsonal Number")]
         public string PersonalNumber { get; set; }
-
+        //ValidateStartDate = true,
         [Required]
         [DataType(DataType.Date)]
+        [CorrectDate( ErrorMessage = "Birth date shouldn't be greater than the current date")]
         public DateTime DateOfBirth { get; set; }
         public string Image { get; set; }
         [Required]
